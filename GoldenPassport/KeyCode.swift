@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Carbon
 
 enum KeyCode: CGKeyCode {
     case a = 0

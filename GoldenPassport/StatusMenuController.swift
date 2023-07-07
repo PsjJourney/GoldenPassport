@@ -184,7 +184,7 @@ class StatusMenuController: NSObject {
 
     private func updateHttpURLMenuItem() {
         let serverPort = DataManager.shared.getHttpServerPort()
-        let url = "浏览器访问 http://localhost:\(serverPort)"
+        let url = "浏览器访问 http://\(globalConstant):\(serverPort)"
         httpUrlMenuItem.title = url
         if (http == nil) {
             httpUrlMenuItem.isHidden = true
@@ -301,7 +301,7 @@ class StatusMenuController: NSObject {
     
     @IBAction func urlClicked(_ sender: NSMenuItem) {
         let serverPort = DataManager.shared.getHttpServerPort()
-        if let url = URL(string: "http://localhost:\(serverPort)") {
+        if let url = URL(string: "http://\(globalConstant):\(serverPort)") {
             NSWorkspace.shared.open(url)
         }
     }
